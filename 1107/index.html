@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="yes" name="apple-touch-fullscreen" />
+    <meta content="telephone=no,email=no" name="format-detection" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <link href="./build/img/favicon.png?v=" type="image/ico" rel="shortcut icon" />
+    <title>拼单行</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="./build/css/app.css">
+    <!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+    <![endif]-->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js"></script>
+    <script src="./build/js/app.js"></script>
+</head>
+
+<body>
+
+    <div style="position:fixed;top:50px;left:50px;color:white;z-index:999;" id="callbacksDiv"></div>
+
+
+    <div id="menu">
+        <div class="menu-box">
+            <div class="menu-logo"></div>
+            <ul class="menu-u">
+                <li data-menuanchor="floor1"><a href="#floor1">产品介绍</a></li>
+                <li data-menuanchor="floor2"><a href="#floor2">使用场景</a></li>
+                <li data-menuanchor="floor3"><a href="#floor3">产品优势</a></li>
+                <li data-menuanchor="floor4"><a href="#floor4">技术方案</a></li>
+                <li data-menuanchor="floor5"><a href="#floor5">合作活动</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="fullpage">
+        <div class="section " id="section0">
+            <h1>sss</h1>
+            <p>Callbacks!</p>
+            <img src="imgs/fullPage.png" alt="fullPage" />
+        </div>
+        <div class="section" id="section1">
+            <div class="slide">
+                <div class="intro">
+                    <h1>Feel free</h1>
+                    <p>All the callbacks you need to do whatever you need.</p>
+                    <p>Just what you would expect.</p>
+                </div>
+            </div>
+            <div class="slide">
+                <h1>Slide 2</h1>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <h1>Ideal for animations</h1>
+                <p>Total control over your website.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    var deleteLog = false;
+
+    $(document).ready(function() {
+        $('#fullpage').fullpage({
+            sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', 'whitesmoke', '#ccddff'],
+            anchors: ['floor1', 'floor2', 'floor3', 'floor4', 'floor5'],
+            menu: '#menu',
+            onLeave: function(index, nextIndex, direction) {
+                if (deleteLog) {
+                    $('#callbacksDiv').html('');
+                }
+                $('#callbacksDiv').append('<p>onLeave - index:' + index + ' nextIndex:' + nextIndex + ' direction:' + direction + '</p>')
+                console.log("onLeave--" + "index: " + index + " nextIndex: " + nextIndex + " direction: " + direction);
+            },
+            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex) {
+                if (deleteLog) {
+                    $('#callbacksDiv').html('');
+                }
+                $('#callbacksDiv').append('<p>onSlideLeave - anchorLink:' + anchorLink + " index:" + index + " slideIndex:" + slideIndex + " direction:" + direction + " nextSlideIndex:" + nextSlideIndex + '</p>');
+                console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+            },
+            afterRender: function() {
+                $('#callbacksDiv').append('<p>afterRender</p>');
+                console.log("afterRender");
+            },
+            afterResize: function() {
+                $('#callbacksDiv').append('<p>afterResize</p>');
+                console.log("afterResize");
+            },
+            afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+                $('#callbacksDiv').append('<p>afterSlideLoad - anchorLink:' + anchorLink + " index:" + index + " slideAnchor:" + slideAnchor + " slideIndex:" + slideIndex + '</p>');
+                deleteLog = true;
+                console.log("afterSlideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
+                console.log("----------------");
+            },
+            afterLoad: function(anchorLink, index) {
+                console.log("after Load  " + index);
+                $('#callbacksDiv').append('<p>afterLoad - anchorLink:' + anchorLink + " index:" + index + '</p>');
+                deleteLog = true;
+                console.log('===============');
+                console.log("afterLoad--" + "anchorLink: " + anchorLink + " index: " + index);
+            }
+        });
+
+    });
+</script>
+
+</html>

@@ -1,0 +1,17 @@
+{
+  "start": "1107",
+  "1107": {
+    "id": "app",
+    "title": "",
+    "version": "0.0.1",
+    "author": "Julian",
+    "load": {
+      "css": ["./1107/src/scss/main.scss"],
+      "js": ["./libs/js/jquery.fullPage.js", "./1107/src/js/main.js"]
+    },
+    "build": {
+      "css": "app.css",
+      "js": "app.js"
+    }
+  }
+}
