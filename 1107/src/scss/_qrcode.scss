@@ -1,0 +1,47 @@
+.qrcode {
+  position: absolute;
+  right: 30px;
+  top: 0;
+  ul {
+    clear: both;
+  }
+  li {
+    float: left;
+    padding-top: 10px;
+    position: relative;
+    margin-left: 20px;
+    img {
+      position: absolute;
+      display: none;
+    }
+    .img1 {
+      left: 50%;
+      margin-left: -91px;
+    }
+    .img2 {
+      right: -20px;
+    }
+    a {
+      color: #333333;
+      font-size: 14px;
+      display: inline-block;
+      overflow: hidden;
+    }
+    .a1 {
+      padding: 3px 6px;
+      border: 1px solid #333333;
+    }
+    .a2 {
+      padding: 3px 6px;
+      width: 17px;
+      background: url("../img/we-icon.png") no-repeat center center;
+      background-size: 17px 14px;
+      text-indent: -9999px;
+    }
+    &:hover {
+      img {
+        display: block;
+      }
+    }
+  }
+}

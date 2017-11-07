@@ -7,7 +7,7 @@
     "author": "Julian",
     "load": {
       "css": ["./1107/src/scss/main.scss"],
-      "js": ["./libs/js/jquery.fullPage.js", "./1107/src/js/main.js"]
+      "js": ["./libs/js/jquery-1.12.4.min.js","./libs/js/jquery.fullPage.js", "./1107/src/js/main.js"]
     },
     "build": {
       "css": "app.css",
