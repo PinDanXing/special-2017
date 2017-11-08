@@ -1,13 +1,13 @@
 .qrcode {
   position: absolute;
   right: 30px;
-  top: 0;
+  top: 10px;
+  z-index: 9999;
   ul {
     clear: both;
   }
   li {
     float: left;
-    padding-top: 10px;
     position: relative;
     margin-left: 20px;
     img {

@@ -14,12 +14,7 @@
     <title>拼单行</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <script type="text/javascript">
-        if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
-            window.location.href = "./m/";
-        }
-    </script>
-    <link rel="stylesheet" href="./build/css/app.css?v3.1">
+    <link rel="stylesheet" href="./build/css/app.css">
     <!--[if lt IE 9]>
         <script type="text/javascript">
             alert("你的浏览器实在太太太太太太旧了!放学别走，升级完浏览器再说")
@@ -27,11 +22,11 @@
 			var console = { log: function() {} };
 		</script>
     <![endif] -->
-    <script src="./build/js/app.js?v2"></script>
+    <script src="./build/js/app.js"></script>
 </head>
 
 <body>
-    <div id="menu" class="">
+    <div id="menu">
         <div class="menu-box">
             <div class="menu-logo"></div>
             <ul class="menu-u">
@@ -46,12 +41,9 @@
 
     <div id="fullpage">
         <div class="section">
-            <div class="page_1 page_content page_w m-auto swiper-container">
-                <div class="img-box" id="imgsideBox" data-index="0">
-                    <img class="imgside" src="./build/img/f1.png" alt="">
-                    <img class="imgside hide" src="./build/img/f12.png" alt="">
-                    <img class="imgside hide" src="./build/img/f13.png" alt="">
-                </div>
+            <div class="page_1 page_content page_w m-auto">
+                <img src="./build/img/f1-1.png" class="img1" alt="">
+                <img src="./build/img/f1-2.png" class="img2" alt="">
             </div>
             <div class="qrcode">
                 <ul class="clearfix">
@@ -92,23 +84,18 @@
         </div>
         <div class="section">
             <div class="page_3 page_content page_w m-auto">
-                <div class="img-box">
-                    <img src="./build/img/f3.png" alt="">
-                </div>
+                <img src="./build/img/f3-text.png" class="img1" alt="">
             </div>
         </div>
         <div class="section">
             <div class="page_4 page_content page_w m-auto">
-                <div class="img-box">
-                    <img src="./build/img/f4.png" alt="">
-                </div>
+                <img class="img1" src="./build/img/f4-text.png" alt="">
             </div>
         </div>
         <div class="section">
             <div class="page_5 page_content page_w m-auto">
-                <div class="img-box">
-                    <img src="./build/img/f5.png" alt="">
-                </div>
+                <img class="img1" src="./build/img/f5-1.png" alt="">
+                <img class="img2" src="./build/img/f5-2.png" alt="">
             </div>
         </div>
     </div>

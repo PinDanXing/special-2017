@@ -23,35 +23,59 @@
     //       el.src = './build/img/browser.png'
     //     }
     //   })
-      // lazyLoadImg.start() // 重新开启懒加载程序
-      // lazyLoadImg.destroy() // 销毁图片懒加载程序
+    // lazyLoadImg.start() // 重新开启懒加载程序
+    // lazyLoadImg.destroy() // 销毁图片懒加载程序
 
   }
 
   $(document).ready(function() {
     $('#fullpage').fullpage({
-        sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#f5f5f5', '#ffffff'],
-        anchors: ['floor1', 'floor2', 'floor3', 'floor4', 'floor5'],
-        menu: '#menu',
-        onLeave: function(index, nextIndex, direction) {
-           
-        },
-        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex) {
-        },
-        afterRender: function() {
-           
-        },
-        afterResize: function() {
-           
-        },
-        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+      sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#f5f5f5', '#ffffff'],
+      anchors: ['floor1', 'floor2', 'floor3', 'floor4', 'floor5'],
+      menu: '#menu',
+      onLeave: function(index, nextIndex, direction) {
 
-        },
-        afterLoad: function(anchorLink, index) {
-        
-        }
+      },
+      onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex) {},
+      afterRender: function() {
+
+      },
+      afterResize: function() {
+
+      },
+      afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex) {
+
+      },
+      afterLoad: function(anchorLink, index) {
+
+      }
     });
 
-});
+    var windHeight = $(window).height()
+    if (windHeight < 600) {
+      $("#menu").addClass("min")
+    }
 
-})()
+  });
+
+ setInterval(function(){
+  loopImgSide()
+ },1500)
+
+})();
+
+function loopImgSide() {
+  var box = $("#imgsideBox");
+  var imgs = box.find(".imgside")
+  var len = imgs.length
+  var index = box.attr("data-index")
+  imgs.addClass("hide");
+  index++
+
+  if(index == len){
+    index = 0
+  } 
+  
+  imgs.eq(index).removeClass("hide")
+  box.attr("data-index", index)
+}
