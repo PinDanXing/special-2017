@@ -613,7 +613,7 @@
  }
  
  .swiper-container {
-   height: 550px;
+   height: 100%;
  }
  
  .swiper-button-prev {
@@ -627,7 +627,7 @@
    /*no*/
    width: 40px;
    height: 80%;
-   background: url('../img/next@2x.png') no-repeat center center;
+  //  background: url('../img/next@2x.png') no-repeat center center;
    background-size: 10px 34px;
    transform: rotate(180deg);
  }
@@ -640,6 +640,6 @@
    //    border-left: 50px solid #444;
    width: 30px;
    height: 80%;
-   background: url('../img/next@2x.png') no-repeat center center;
+  //  background: url('../img/next@2x.png') no-repeat center center;
    background-size: 10px 34px;
  }
