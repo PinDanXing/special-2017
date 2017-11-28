@@ -1,8 +1,8 @@
 .app{
-  height: 5809px;
+  // height: 7126px;
   width: 100%;
   overflow: hidden;
-  background: url("../img/banner.jpg") no-repeat center top;
+  background:#21051f url("../img/banner.jpg") no-repeat center top;
 }
 
 
@@ -29,6 +29,10 @@
   &_3{
     height: 725px;
     background: url("../img/3.png") no-repeat center center;
+  }
+  &_4{
+    height: 1174px;
+    background: url("../img/detail.png") no-repeat center center;
   }
 }
 
